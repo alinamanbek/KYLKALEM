@@ -1,4 +1,4 @@
-#!/Users/alina/Desktop/Kyl-Kalem/Backend/env/bin/python3.11
+#!/Users/alina/Desktop/Kyl-Kalem/backend/env/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
