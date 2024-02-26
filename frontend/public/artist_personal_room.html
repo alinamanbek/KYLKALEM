@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist's Personal Room</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom styles here */
+        /* For example: */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .profile-info {
+            margin-bottom: 30px;
+        }
+        .profile-info h2 {
+            margin-bottom: 20px;
+        }
+        .artist-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .btn-group-horizontal {
+            display: flex;
+            flex-direction: row;
+        }
+        .btn-group-horizontal .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Left Half -->
+            <div class="col-md-8">
+                <div class="profile-info">
+                    <h2>Edit Personal Information</h2>
+                    <img src="/Users/alina/Desktop/Kyl-Kalem/front_app/public/20230823_181704.jpg" alt="Artist Photo" class="artist-photo">
+                    <form>
+                        <div class="mb-3">
+                            <label for="pseudonym" class="form-label">Pseudonym</label>
+                            <input type="text" class="form-control" id="pseudonym" value="YourPseudonym">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" value="John">
+                        </div>
+                        <div class="mb-3">
+                            <label for="surname" class="form-label">Surname</label>
+                            <input type="text" class="form-control" id="surname" value="Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="example@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" value="+1234567890">
+                        </div>
+                        <div class="mb-3">
+                            <label for="education" class="form-label">Education</label>
+                            <input type="text" class="form-control" id="education" value="Bachelor of Fine Arts">
+                        </div>
+                        <div class="mb-3">
+                            <label for="working_experience" class="form-label">Working Experience</label>
+                            <input type="text" class="form-control" id="working_experience" value="5 years as a professional artist">
+                        
+                        
+                        <div class="mb-3">
+                            <label for="newEmail" class="form-label">New Email Address</label>
+                            <input type="email" class="form-control" id="newEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Right Half -->
+            <div class="col-md-4">
+                <div class="btn-group-horizontal">
+                    <button type="button" class="btn btn-primary">Pictures</button>
+                    <button type="button" class="btn btn-success">Create</button>
+                    <button type="button" class="btn btn-info">Clients</button>
+                </div>
+                <!--<div class="card mt-4">
+                    <div class="card-body">
+                        
+                    </div>
+                </div>-->
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional, for some features like dropdowns, modals, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
