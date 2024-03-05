@@ -64,4 +64,5 @@ urlpatterns = [
     path('managers/<int:pk>/', ManagerDetailView.as_view(), name='manager-detail'),
     path('mainpage/', MainPageListCreateView.as_view(), name='mainpage-list'),
     path('mainpage/<int:pk>/', MainPageDetailView.as_view(), name='mainpage-detail'),
+    
 ]
