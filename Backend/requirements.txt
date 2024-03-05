@@ -1,0 +1,7 @@
+pip install psycopg2-binary
+pip install psycopg2
+django-3.2.12
+
+mysql  Ver 8.1.0 for macos12.6 on arm64 (Homebrew)
+axios version-1.6.7
+pip install django-cors-headers Pillow

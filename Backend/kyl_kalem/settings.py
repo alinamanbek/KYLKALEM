@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,8 +41,11 @@ INSTALLED_APPS = [
     'rest_framework',
     #'kyl_kalem.main',
     'main',
+    'corsheaders',  # for cors policies
     
     ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,7 +55,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # <-- Place CorsMiddleware here
+    
+    
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+...
+
+CORS_ORIGIN_ALLOW_ALL = True  # <-- Allow all origins during development
+
+...
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # <-- Specify STATIC_ROOT for collecting static files
 
 ROOT_URLCONF = 'kyl_kalem.urls'
 
@@ -77,19 +95,26 @@ WSGI_APPLICATION = 'kyl_kalem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# settings.py
+
+# Replace the existing database configuration with the following for MySQL:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'KYL_KALEM',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',  # or 'localhost'
-        'PORT': '8889',
+        'NAME': 'ALINA',     # Replace with your actual database name
+        'USER': 'root',                   # MySQL username
+        'PASSWORD': 'root',               # MySQL password
+        'HOST': '127.0.0.1',              # MySQL host (use 'localhost' if preferred)
+        'PORT': '8889',                   # MySQL port
         'OPTIONS': {
-            'autocommit': True,
+            'unix_socket': '/Applications/MAMP/tmp/mysql/mysql.sock',  # Path to MySQL socket
         },
     }
 }
+
+
+
+
 
 
 # Password validation
@@ -138,3 +163,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+# settings.py
+ 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
