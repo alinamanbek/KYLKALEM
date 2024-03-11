@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css'; // Import your CSS file for styling
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+import { Modal, Button } from 'react-bootstrap'; // Import Bootstrap Modal and Button components
+
+import SignIn from './components/Enter_acc/Signin'; // Import the SignIn component
 
 function App() {
+  const [showSignInModal, setShowSignInModal] = useState(false);
+
+  const handleSignInButtonClick = () => {
+    setShowSignInModal(true);
+  };
+
+  const handleSignInModalClose = () => {
+    setShowSignInModal(false);
+  };
+
+
   return (
     <div className="App">
       <header className="navbar">
@@ -13,10 +26,10 @@ function App() {
           <a href="#about">About</a>
           <a href="#artist">Artist</a>
           <a href="#login">Log in</a>
-          <a href="#logout">Sign in</a>
+           {/* Use onClick event to toggle SignIn component visibility */}
+          <a href="#signin" onClick={handleSignInButtonClick}>Sign in</a>
         </div>
       </header>
-
       <div className="carousel-container">
         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel" style={{ width: '60%', margin: '0 auto' }}>
           <div className="carousel-inner">
@@ -53,11 +66,10 @@ function App() {
         </div>
       </div>
 
-      
       <div className="container">
-        <div className="row row-cols-0 row-cols-md-0 g-0">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col">
-            <div className="card ih-100\\\">
+            <div className="card">
               <img src="/img/kyl.png" className="card-img-top" alt="Card" />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -78,7 +90,19 @@ function App() {
         </div>
       </div>
 
-
+      {/* Bootstrap modal for sign-in */}
+      <Modal show={showSignInModal} onHide={handleSignInModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign In</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Include the SignIn component */}
+          <SignIn />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleSignInModalClose}>Close</Button>
+        </Modal.Footer>
+      </Modal>
 
 
       <footer className="footer">

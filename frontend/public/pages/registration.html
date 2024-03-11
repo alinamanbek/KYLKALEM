@@ -50,7 +50,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
             <!-- Кнопка для входа через Gmail -->
-            <a href="{% url 'auth_gmail' %}" class="btn btn-danger mt-2">Войти через Gmail</a>
+            <a href="{% provider_login_url 'google' %}" class="btn btn-danger mt-2">Войти через Google</a>
+
         </form>
     </div>
 
